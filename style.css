@@ -4,6 +4,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    flex-wrap: wrap;
 }
 
 header{
@@ -59,3 +60,54 @@ header nav a{
     padding-right: 5px;
 }
 
+/*BODY*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Press+Start+2P&display=swap');
+
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    margin: 100px;
+    padding: 40px;
+    background-color: #333;
+    width: 650px;
+
+    max-width: 650px; /* Limite máximo de largura */
+    height: auto;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+
+    font-family: 'Press Start 2P', sans-serif;
+    color: white;
+    font-size: 28pt;
+    text-shadow: 3px 5px 2px rgb(0, 0, 0);
+    width: 100%;
+    padding-top: 15px;
+}
+
+div p{
+    font-family: 'Press Start 2P', sans-serif;
+    color: white;
+    font-size: 17pt;
+    text-shadow: 3px 5px 2px rgb(0, 0, 0);
+    width: 100%;
+    padding-top: 30px;
+    line-height: 1.5; /*espaçamento entre linhas*/
+}
+
+.frontend{
+    text-shadow: 
+    1px 1px 0px red,
+    2px 2px 0px orange,
+    3px 3px 0px yellow,
+    4px 4px 0px green,
+    5px 5px 0px blue,
+    6px 6px 0px indigo,
+    7px 7px 0px violet;
+}
