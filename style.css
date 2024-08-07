@@ -64,13 +64,13 @@ header nav a{
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Press+Start+2P&display=swap');
 
-div{
+.bloco{
     display: flex;
     flex-direction: column;
     align-items: center;
 
 
-    margin: 100px;
+    margin: 100px 100px 20px 100px;
     padding: 40px;
     background-color: #333;
     
@@ -92,7 +92,7 @@ h1{
     padding-top: 15px;
 }
 
-div p{
+.bloco p{
     font-family: 'Press Start 2P', sans-serif;
     color: white;
     font-size: 17pt;
@@ -103,7 +103,7 @@ div p{
     text-align: center;
 }
 
-.frontend{
+#frontend{
     text-shadow: 
     1px 1px 0px red,
     2px 2px 0px orange,
@@ -112,4 +112,33 @@ div p{
     5px 5px 0px blue,
     6px 6px 0px indigo,
     7px 7px 0px violet;
+}
+
+/*botoes*/
+
+#botoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background: transparent;
+    width: 500px;
+    height: 80px;
+    margin-left: 120px;
+    padding: 0px 40px 40px 40px;
+}
+
+#b1, #b2{
+    width: 200px;
+    height: 50px;
+    background-color: #333;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 0 black;
+}
+
+#botoes a{
+    font-family: 'Press Start 2P', sans-serif;
+    color: white;
+    font-size: 14pt;
 }
