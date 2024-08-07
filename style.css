@@ -1,4 +1,16 @@
-body{
+/* fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Press+Start+2P&display=swap');
+
+/* variaveis*/
+:root {
+    --primaria: #333;
+    --secundaria: #fff;
+    --destaque: black;
+    --pixel: 'Press Start 2P', sans-serif;
+}
+
+/* global*/
+body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
@@ -7,103 +19,95 @@ body{
     flex-wrap: wrap;
 }
 
-header{
-    background: #333;
+/*header*/
+header {
+    background: var(--primaria);
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /*definição do local dos itens do header*/
+    align-items: flex-end;
+    
     padding: 15px;
     height: 60px;
-
-    outline: 15px solid black;
-    /*flex-direction: row-reverse;*/ /*Caso eu queria inverter facilmente a disposição do header*/
+    outline: 15px solid var(--destaque);
 }
 
-header nav{
+header nav {
     display: flex;
     gap: 20px;
 }
 
 header a {
     text-decoration: none;
-    color: #fff;
+    color: var(--secundaria);
+
     display: inline-flex;
     align-items: center;
+
     font-size: 16px;
-    font-family:'Courier New', Courier, monospace
+    font-family: 'Courier New', Courier, monospace;
 }
 
-header nav .aa { /*efeito ease-in-out*/
-    transition: 0.5s;
+header nav .aa {
+    transition: font-size 0.5s ease-in-out;
     font-size: 16pt;
 }
 
-header nav .aa:hover { /*efeito ease-in-out*/
-    transition: 0.5;
+header nav .aa:hover {
     font-size: 20pt;
 }
 
-header .aa:before{ /*elemento criado (circulozinho)*/
+header .aa:before {
     content: " ";
-    background-color: rgb(255, 255, 255);
+    background-color: var(--secundaria);
     width: 10px;
-    height: 10px; 
+    height: 10px;
     margin-right: 10px;
     border-radius: 50%;
 }
 
-header nav a{
-    color: #fff;
+header nav a {
+    color: var(--secundaria);
     text-decoration: none;
     font-weight: bold;
-    padding-left: 5px;      /*left e right para não aumentar baixo e cima*/
-    padding-right: 5px;
+    padding: 0 5px;
 }
 
-/*BODY*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Press+Start+2P&display=swap');
-
-.bloco{
+/*body*/
+.bloco {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
-
-    margin: 100px 100px 20px 100px;
+    margin: 100px 0 20px 1%;
     padding: 40px;
-    background-color: #333;
-    
-
-    max-width: 650px; /* responsividade */
-    height: auto;
+    background-color: var(--primaria);
+    max-width: 40%; /* responsividade */
     box-sizing: border-box;
-    box-shadow: 10px 10px 0 black;
+    box-shadow: 10px 10px 0 var(--destaque);
 }
 
-h1{
+h1 {
     text-align: center;
-
-    font-family: 'Press Start 2P', sans-serif;
-    color: white;
+    font-family: var(--pixel);
+    color: var(--secundaria);
     font-size: 28pt;
-    text-shadow: 3px 5px 2px rgb(0, 0, 0);
+    text-shadow: 3px 5px 2px var(--destaque);
     width: 100%;
     padding-top: 15px;
 }
 
-.bloco p{
-    font-family: 'Press Start 2P', sans-serif;
-    color: white;
+.bloco p {
+    font-family: var(--pixel);
+    color: var(--secundaria);
     font-size: 17pt;
-    text-shadow: 3px 5px 2px rgb(0, 0, 0);
+    text-shadow: 3px 5px 2px var(--destaque);
     width: 100%;
     padding-top: 30px;
-    line-height: 1.5; /*espaçamento entre linhas*/
+    line-height: 1.5;
     text-align: center;
 }
 
-#frontend{
+#frontend {
     text-shadow: 
     1px 1px 0px red,
     2px 2px 0px orange,
@@ -114,31 +118,35 @@ h1{
     7px 7px 0px violet;
 }
 
-/*botoes*/
-
-#botoes{
+/* botoes*/
+#botoes {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 
     background: transparent;
-    width: 500px;
+    max-width: 40%;
     height: 80px;
-    margin-left: 120px;
-    padding: 0px 40px 40px 40px;
+    margin: 0 0 20px 1%;
 }
 
-#b1, #b2{
+#b1, #b2 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
     width: 200px;
     height: 50px;
-    background-color: #333;
+    background-color: var(--primaria);
     box-sizing: border-box;
-    box-shadow: 10px 10px 0 black;
+    box-shadow: 10px 10px 0 var(--destaque);
+    margin: 0 20px 0 20px;
 }
 
-#botoes a{
-    font-family: 'Press Start 2P', sans-serif;
-    color: white;
+#botoes a {
+    font-family: var(--pixel);
+    color: var(--secundaria);
     font-size: 14pt;
 }
