@@ -73,11 +73,12 @@ div{
     margin: 100px;
     padding: 40px;
     background-color: #333;
-    width: 650px;
+    
 
-    max-width: 650px; /* Limite máximo de largura */
+    max-width: 650px; /* responsividade */
     height: auto;
     box-sizing: border-box;
+    box-shadow: 10px 10px 0 black;
 }
 
 h1{
