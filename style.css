@@ -174,6 +174,7 @@ a .botoes {
     padding: 5rem 0;
     background: var(--skills);
     width: 100%;
+    border-bottom: 2vh solid #000;
 }
 
 .skills #titulo-skills {
@@ -234,6 +235,40 @@ a .botoes {
  /*tamanho icones*/
 #html > i, #css > i, #js > i, #react > i, #nodejs > i, #tdd > i, #rest > i, #ux > i{
     transform: scale(2);
+}
+
+/*section projetos*/
+.projetos{
+    background: black;
+    padding: 5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--pixel);
+    color: var(--secundaria);
+}
+.projetos #projeto-title{
+    text-align: center;
+    padding: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 0.3rem 0.3rem 0rem var(--destaque);
+}
+
+.projetos .p-conteiner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem;
+    gap: 3vw;
+}
+
+.imgprojeto {
+    border: 0.4rem outset #ffffff;
+    background: gray;
+    height: 20vh;
+    width: 20vh;
+    object-fit: cover;
 }
 
 /*media queries*/
@@ -359,5 +394,13 @@ a .botoes {
 
     .sktitle:after {
         width: 70vw;
+    }
+
+    /*projeto*/
+
+    .imgprojeto{
+        border: 0.3rem outset #ffffff;
+        height: 16vh;
+        width: 16vh;
     }
 }
