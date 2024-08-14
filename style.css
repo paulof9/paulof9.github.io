@@ -322,12 +322,14 @@ a .botoes {
 }
 
 .button-arrow.-left {
-    left: 1rem;
+    top: 4rem;
+    left: -6rem;
     transform: translateY(-50%) rotate(180deg);
 }
 
 .button-arrow.-right {
-    right: 1rem;
+    top: 4rem;
+    right: -6rem;
 }
 
 .button-arrow .hidden{
@@ -361,7 +363,7 @@ a .botoes {
     z-index: 1;
 }
 
-.node-card figure::after {
+.node-card figure::after { /*linha vertical*/
     content: "";
     width: 2px;
     height: 2rem; /* altura entre linha do tempo e a imagem */
@@ -373,7 +375,7 @@ a .botoes {
     z-index: 1;
 }
 
-.node-card::before{ /*pontilhado*/
+.node-card::before{ /*linha horizontal*/
     content: "";
     width: 100%;
     height: 2px;
@@ -426,6 +428,16 @@ a .botoes {
     .botoesnav {
         gap: 1.5vw;
     }
+
+    .button-arrow.-left {
+        top: 4rem;
+        left: -7rem;
+    }
+    
+    .button-arrow.-right {
+        top: 4rem;
+        right: -7rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -471,6 +483,36 @@ a .botoes {
 
     .sktitle:after {
         width: 50vw;
+    }
+
+    /*sobre*/
+
+    .button-arrow{
+        width: 7vw;
+        height: 5vh;
+    }
+    
+    .button-arrow::before{
+        width: 0.3vw;
+        height: 0.5vh;
+        scale: 3;
+    }
+
+    .button-arrow.-left {
+        top: 14rem;
+        left: -2rem;
+    }
+    
+    .button-arrow.-right {
+        top: 14rem;
+        right: -2rem;
+    }
+
+    .sobre .sobretexto{
+        font-size: 1.3rem;
+        width: 80vw;
+        margin: 1rem 0 1rem 0;
+        line-height: 1.3rem;
     }
 }
 
@@ -531,4 +573,36 @@ a .botoes {
         height: 16vh;
         width: 16vh;
     }
+
+    /*sobre*/
+
+    .button-arrow{
+        width: 7vw;
+        height: 5vh;
+    }
+    
+    .button-arrow::before{
+
+        width: 0.3vw;
+        height: 0.5vh;
+        scale: 3;
+    }
+
+    .button-arrow.-left {
+        top: 14rem;
+        left: -2rem;
+    }
+    
+    .button-arrow.-right {
+        top: 14rem;
+        right: -2rem;
+    }
+
+    .sobre .sobretexto{
+        font-size: 1.3rem;
+        width: 80vw;
+        margin: 1rem 0 1rem 0;
+        line-height: 1.3rem;
+    }
+
 }
