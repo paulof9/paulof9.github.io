@@ -275,7 +275,7 @@ a .botoes {
 }
 
 /*section sobre*/
-.sobre{
+.sobre {
     background: var(--skills);
     color: var(--secundaria);
     padding: 5rem 0;
@@ -285,10 +285,11 @@ a .botoes {
     align-items: center;
     flex-direction: column;
     border-bottom: 2vh solid #000;
-    position: relative;
+    position: relative; /* botões relativos à seção */
+    overflow: hidden;
 }
 
-.sobretitulo{
+.sobretitulo {
     text-align: center;
     padding: 1rem;
     font-size: 2.5rem;
@@ -296,59 +297,69 @@ a .botoes {
     font-family: var(--pixel);
 }
 
-.button-arrow{ /*setas seletoras*/
+.sobre .button-arrow {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 4vw;
-    height: 8vh;
+    height: 6vh;
     box-shadow: 0.3rem 0.3rem 0rem black;
     background-color: var(--primaria);
     cursor: pointer;
-    z-index: 1;
+    z-index: 2; 
+    transform: translateY(-50%);
 }
 
-.button-arrow::before{  /*seta direita e pai*/
+.button-arrow::before {
     content: "";
     display: block;
     width: 0.3vw;
     height: 0.5vh;
-    scale: 6;
+    scale: 5;
     border: 0.3rem solid transparent;
     border-left-color: var(--secundaria);
     box-sizing: border-box;
     margin: auto;
-    transform: translate(0.3vh);
 }
 
 .button-arrow.-left {
-    top: 4rem;
-    left: -6rem;
-    transform: translateY(-50%) rotate(180deg);
+    left: 5%; 
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(180deg);
 }
 
 .button-arrow.-right {
-    top: 4rem;
-    right: -6rem;
+    right: 5%; 
+    top: 50%;
+    transform: translateX(50%) translateY(-50%);
 }
 
-.button-arrow .hidden{
+.button-arrow .hidden {
     display: none;
 }
-/**/
-.sobre .sobretexto{
+
+.sobre .sobretexto {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     font-size: 1.2rem;
-    width: 40vw;
-    margin: 1rem 0 1rem 0;
+    width: 80vw; /* largura do texto */
+    margin: 1rem 0;
     line-height: 2rem;
 }
 
-.node-card{
+.timeline-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; 
+    position: relative;
+    width: 90%; /* largura da timeline*/
+    max-width: 1200px; 
+    transition: transform 100ms ease-in-out;
+}
+
+.node-card {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-start;
     width: 80%;
     position: relative;
@@ -359,23 +370,24 @@ a .botoes {
     flex-direction: column;
     align-items: center;
     margin: 2rem 1rem;
-    position: relative;
+    position: relative; /*pai*/
     z-index: 1;
 }
 
-.node-card figure::after { /*linha vertical*/
+.node-card figure::after {
     content: "";
     width: 2px;
     height: 2rem; /* altura entre linha do tempo e a imagem */
     background-color: var(--secundaria);
-    position: absolute;
+    position: absolute; /*faz com que o position seja igual do pai, position: relative.*/
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 1; /*linha acima da linha de baixo pois tem o valor de "1"
+    Para o z-index funcionar, o elemento deve ter uma posição definida como relative, absolute, fixed, ou sticky.*/
 }
 
-.node-card::before{ /*linha horizontal*/
+.node-card::before {
     content: "";
     width: 100%;
     height: 2px;
@@ -386,13 +398,13 @@ a .botoes {
     z-index: 0;
 }
 
-.anostitle{
+.anostitle {
     margin: 1rem 0;
     font-size: 1.5rem;
     transform: translateY(-5vh);
 }
 
-.logo{
+.logo {
     width: auto;
     height: 8vh;
     background-color: var(--primaria);
@@ -429,16 +441,30 @@ a .botoes {
         gap: 1.5vw;
     }
 
+    .button-arrow {
+        width: 3vw;
+        height: 5vh;
+    }
+    
+    .button-arrow::before {
+        width: 0.2vw;
+        height: 0.4vh;
+        scale: 4;
+    }
+
     .button-arrow.-left {
-        top: 4rem;
-        left: -7rem;
+        left: calc(6% + 1vw); /* Ajusta o botão esquerdo para dentro da seção */
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
     }
     
     .button-arrow.-right {
-        top: 4rem;
-        right: -7rem;
+        right: calc(6% + 1vw); /* Ajusta o botão direito para dentro da seção */
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
+
 
 @media (max-width: 768px) {
     header nav .aa {
@@ -466,8 +492,6 @@ a .botoes {
         gap: 2vw;
     }
 
-    /*skills*/    /*alterado o titulo "skills", o conteiner wrapper, icones e a barra de carregamento*/
-
     .skills .skills-conteiner {
         grid-template-columns: 1fr; /* Exibir um item por linha */
         width: 80vw;
@@ -485,38 +509,41 @@ a .botoes {
         width: 50vw;
     }
 
-    /*sobre*/
-
-    .button-arrow{
-        width: 7vw;
-        height: 5vh;
+    .button-arrow {
+        width: 2vw;
+        height: 4vh;
     }
     
-    .button-arrow::before{
-        width: 0.3vw;
-        height: 0.5vh;
-        scale: 3;
+    .button-arrow::before {
+        width: 0.4vw;
+        height: 0.6vh;
+        scale: 2;
     }
 
     .button-arrow.-left {
-        top: 14rem;
-        left: -2rem;
+        left: calc(4% + 1vw); /* Ajusta a posição do botão para dispositivos menores */
+        top: 65%;
+        transform: translateY(-50%) rotate(180deg);
     }
     
     .button-arrow.-right {
-        top: 14rem;
-        right: -2rem;
+        right: calc(4% + 1vw); /* Ajusta a posição do botão para dispositivos menores */
+        top: 65%;
+        transform: translateY(-50%);
     }
 
-    .sobre .sobretexto{
+    .sobre .sobretexto {
         font-size: 1.3rem;
-        width: 80vw;
-        margin: 1rem 0 1rem 0;
-        line-height: 1.3rem;
+        width: 90vw; /* Ajusta a largura do texto em dispositivos menores */
+    }
+
+    .timeline-wrapper {
+        width: 100%; /* Ajusta a largura da timeline para dispositivos menores */
+        max-width: none; /* Remove a largura máxima para dispositivos menores */
     }
 }
 
-/*celulares*/
+
 @media (max-width: 480px) {
     header nav .aa {
         font-size: 1rem;
@@ -543,8 +570,6 @@ a .botoes {
         padding: 0.6rem 1rem;
     }
 
-    /*skills*/
-    /*alterado o pai, o titulo "skills", o conteiner wrapper, icones e a barra de carregamento*/
     .skills {
         padding: 3rem 0;
     }
@@ -566,43 +591,45 @@ a .botoes {
         width: 70vw;
     }
 
-    /*projeto*/
-
-    .imgprojeto{
+    .imgprojeto {
         border: 0.3rem outset #ffffff;
         height: 16vh;
         width: 16vh;
     }
 
-    /*sobre*/
-
-    .button-arrow{
-        width: 7vw;
-        height: 5vh;
+    .button-arrow {
+        width: 1.5vw;
+        height: 3vh;
     }
-    
-    .button-arrow::before{
 
-        width: 0.3vw;
-        height: 0.5vh;
-        scale: 3;
+    .button-arrow::before {
+        width: 0.2vw;
+        height: 0.4vh;
     }
 
     .button-arrow.-left {
-        top: 14rem;
-        left: -2rem;
+        left: 5%; /* Ajusta a posição do botão esquerdo para dispositivos menores */
+        top: 70%;
+        transform: translateY(-50%) rotate(180deg);
     }
     
     .button-arrow.-right {
-        top: 14rem;
-        right: -2rem;
+        right: 5%; /* Ajusta a posição do botão direito para dispositivos menores */
+        top: 70%;
+        transform: translateY(-50%);
     }
 
-    .sobre .sobretexto{
-        font-size: 1.3rem;
-        width: 80vw;
-        margin: 1rem 0 1rem 0;
-        line-height: 1.3rem;
+    .sobre .sobretexto {
+        font-size: 1.2rem;
+        width: 95vw; /* Ajusta a largura do texto em dispositivos menores */
     }
 
+    .timeline-wrapper {
+        width: 100%; /* Ajusta a largura da timeline para dispositivos menores */
+        max-width: none; /* Remove a largura máxima para dispositivos menores */
+    }
+
+    .node-card figure::after {
+        height: 1.5rem; /* Ajusta a altura da linha entre os elementos */
+    }
 }
