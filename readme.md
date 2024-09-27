@@ -1,2 +1,1 @@
-site dos videos do marco bruno, utilizando flexbox, grid...
-principais dificuldades até o momento: position e organização de pai e filho, não consegui centralizar a seta... por algum motivo ao alterar os tamanhos eles não mudam. Espero resolver brevemente no futuro!
+
